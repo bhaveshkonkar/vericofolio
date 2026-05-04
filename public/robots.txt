@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vericofolio.com/sitemap.xml
