@@ -1,0 +1,254 @@
+/* ═══════════════════════════════════════════════
+   CTA / Stats — Waitlist Dark
+   ═══════════════════════════════════════════════ */
+
+.cta {
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 40%, #0f0f23 100%);
+  padding: 100px 0 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.cta__glow--1 {
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
+}
+
+.cta__glow--2 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+}
+
+.cta__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left */
+.cta__heading {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -2px;
+  line-height: 1.12;
+}
+
+.cta__heading-accent {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta__desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 18px;
+  max-width: 380px;
+}
+
+/* Waitlist Form */
+.cta__form {
+  display: flex;
+  gap: 0;
+  margin-top: 28px;
+  max-width: 420px;
+}
+
+.cta__form-input {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-right: none;
+  border-radius: var(--radius-full) 0 0 var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.cta__form-input:focus {
+  border-color: var(--accent);
+}
+
+.cta__form-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.cta__form-btn {
+  padding: 15px 26px;
+  font-size: 14px;
+  font-weight: 650;
+  font-family: var(--font-sans);
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+  border: none;
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+}
+
+.cta__form-btn:hover {
+  box-shadow: 0 8px 28px rgba(249, 115, 22, 0.45);
+  transform: translateY(-1px);
+}
+
+.cta__form-success {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #22c55e;
+  animation: fadeInUp 0.3s ease both;
+}
+
+.cta__form-note {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 12px;
+}
+
+/* Stats Grid */
+.cta__right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.cta__stat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-xl);
+  padding: 32px 24px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.cta--visible .cta__stat {
+  animation: featureCardIn 0.5s ease forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes featureCardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta__stat:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.cta__stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(249, 115, 22, 0.12);
+  color: #f97316;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  transition: transform var(--transition-smooth);
+}
+
+.cta__stat:hover .cta__stat-icon {
+  transform: scale(1.1);
+}
+
+.cta__stat-value {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.cta__stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* Footer note */
+.cta__footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .cta__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .cta__form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta__form-note { text-align: center; }
+  .cta__heading { font-size: 34px; }
+  .cta__desc { margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 480px) {
+  .cta__right {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .cta__stat { padding: 24px 16px; }
+  .cta__stat-value { font-size: 28px; }
+  .cta__heading { font-size: 28px; }
+  .cta__form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cta__form-input {
+    border-right: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-full);
+  }
+  .cta__form-btn { border-radius: var(--radius-full); }
+}
